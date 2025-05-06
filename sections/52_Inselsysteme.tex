@@ -1,0 +1,105 @@
+\section{Inselsysteme}
+
+\begin{itemize}
+    \item Einsatz in abgelegenen Regionen (z.B. Berghütten, Inseln)
+    \item Typen
+        \begin{itemize}
+            \item PV-Inselsysteme
+            \item PV-Pumpensysteme
+            \item Mikronetze
+        \end{itemize}
+    \item Dimensionierung:
+    \begin{itemize}
+        \item Ermittlung Strombedarf
+        \item Auslegung Batteriespeicher (Autonomiezeit, Kapazität)
+        \item Dimensionierung Solargenerator auf schwächsten Monat
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Aufbau Inselsysteme}
+
+\includegraphics[width=0.98\linewidth]{images/Inselsysteme.png}
+
+
+\subsection{Dimmensionierung}
+
+\subsubsection{Ermittlung Stromverbrauch}
+
+\begin{itemize}
+    \item Nutzungsprofil: Saison/Monate, Anzahl Tage (z.B. Wochenendhaus)
+    \item Bedarfstabelle täglicher Verbrauch
+\end{itemize}
+
+\subsubsection{Dimmensionierung Batteriespeicher}
+
+\begin{itemize}
+    \item Wahl Batterietyp: z.B. Blei (seltene Nutzung / wenige Zyklen) oder Lithium-Ionen (tägliche Nutzung)
+    \item Gewünschte Autonomiezeit in Tagen (gewünschte Versorgungssicherheit)
+    \item Maximale Last
+\end{itemize}
+
+\vspace{0.15cm}
+
+$
+\boxed{
+C_N = \frac{W \cdot N_A}{U_N \cdot \eta_S \cdot DOD \cdot SOH_{\text{min}}}
+}
+\quad \text{oder} \quad
+\boxed{
+C_N = \frac{P_{\text{max}} \cdot t_{\text{disc}}}{U_N}
+}
+$
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l p{6cm} l @{}}
+    $[C_N]$             & Nennkapazität der Batterie \dotfill & \textnormal{Ah} \\
+    $[W]$               & Elektrischer Energiebedarf pro Tag \dotfill & \textnormal{Wh/d} \\
+    $[N_A]$             & Autonomiezeit (Tage ohne Nachladung) \dotfill & \textnormal{d} \\
+    $[U_N]$             & Systemspannung \dotfill & \textnormal{V} \\
+    $[\eta_S]$          & Wirkungsgrad der Ausspeicherung \dotfill & \textnormal{--} \\
+    $[DOD]$             & Entladetiefe (Depth of Discharge) \dotfill & \textnormal{--} \\
+    $[SOH_{\text{min}}]$& Minimaler State of Health / Gesundheitszustand \dotfill & \textnormal{--} \\
+    $[P_{\text{max}}]$  & Maximale gleichzeitige Verbraucherleistung \dotfill & \textnormal{W} \\
+    $[t_{\text{disc}}]$ & Minimale Entladezeit \dotfill & \textnormal{h} \\
+\end{tabular}
+
+
+
+\subsubsection{Dimmensionierung Solargenerator}
+
+\begin{itemize}
+    \item Es wird auf den Strahlungsschwächsten Monat ausgelegt!
+\end{itemize}
+
+\vspace{0.15cm}
+
+$\boxed{P_{\text{PV}}= \frac{W \cdot k \cdot 1'000 \frac{\textbf{W}}{\textbf{m$^2$}}}{H_{i,\text{gen}} \cdot \eta_{\text{Sys}}}}$
+
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l p{7cm} l @{}}
+    $[P_{\text{PV}}]$       & Nennleistung des PV-Generators \dotfill & $W_p$ \\
+    $[W]$                   & Elektrischer Energiebedarf pro Tag \dotfill & $\frac{\text{Wh}}{\text{d}}$ \\
+    $[k]$                   & Sicherheitsfaktor (z.B. abhängig von Autonomiezeit) \dotfill & $-$ \\
+    $[H_{i,\text{gen}}]$    & Monatsmittlere Tagesstrahlungssumme auf geneigte Fläche \dotfill & $\frac{\text{Wh}}{\frac{\text{m}^2}{\text{d}}} = \frac{\text{Wh \cdot \text{d}}}{\text{m}^2} $  \\
+    $[\eta_{\text{Sys}}]$   & Systemwirkungsgrad  \dotfill & $-$ \\
+\end{tabular}
+
+\subsubsection{Mikronetze}
+
+\begin{itemize}
+    \item Meist als Hybridsystem mit AC-Kopplung der Erzeuger und Verbraucher
+    \item Speicherdimensionierung sehr individuell je nach Energieerzeugung, Verbrauchern etc.
+    \item Bei größeren Systemen häufig Hybridbatterie als »Leistungsbatterie« (z.B. Lithium) und »Energiebatterie« (z.B. Redox-Flow)
+\end{itemize}
+
+\includegraphics[width=0.98\linewidth]{images/Mikronetze.png}
+
+
+
+
+
+
+
+
+
