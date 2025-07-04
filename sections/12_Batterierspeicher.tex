@@ -1,92 +1,164 @@
+\columnbreak
 \section{Batteriespeicher}
+\subsection{Kennzahlen bei PV-Eigenverbrauchssteigerung}
+
+\subsubsection{Energieverbrauch}
+
+\vspace{0.1cm}
+
+$
+\boxed{
+E_\mathrm{ges} = E_{\mathrm{PV,AC}} - E_{\mathrm{NE}} + E_{\mathrm{NB}} 
+}
+$
+$
+\boxed{
+E_\mathrm{eig} = E_{\mathrm{PV,AC}} - E_{\mathrm{NE}}
+}
+$
+
+\vspace{0.1cm}
+
+$
+\boxed{
+R_\mathrm{eig} = \frac{E_\mathrm{eig}}{E_\mathrm{PV,AC}}
+}
+$
+$
+\boxed{
+R_\mathrm{eig} = \frac{E_\mathrm{PV,AC} - E_\mathrm{NE}}{E_\mathrm{PV,AC}}
+}
+$
+$
+\boxed{
+R_\mathrm{eig} = \frac{E_\mathrm{ges} - E_\mathrm{NB}}{E_\mathrm{PV,AC}}
+}
+$
+
+\vspace{0.1cm}
+
+$
+\boxed{
+R_\mathrm{aut,ges} = \frac{E_\mathrm{eig}}{E_\mathrm{ges}} 
+}
+$
+$
+\boxed{
+R_\mathrm{aut,ges} = \frac{E_\mathrm{ges} - E_\mathrm{NB}}{E_\mathrm{ges}}
+}
+$
+
+\vspace{0.1cm}
+
+$
+\boxed{
+R_\mathrm{aut,Last} = \frac{E_\mathrm{eig,PV} + E_\mathrm{eig,BE}}{E_\mathrm{Last}}
+}
+$
+$
+\boxed{
+R_\mathrm{aut,Last} = \frac{E_\mathrm{Last} - E_\mathrm{NB}}{E_\mathrm{Last}}
+}
+$
+
+\vspace{0.1cm}
+
+$
+\boxed{
+R_\mathrm{PV} = \frac{E_\mathrm{PV,AC}}{E_\mathrm{ges}}
+}
+$
+
+\vspace{0.1cm}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l p{6.5cm} l @{}}
+    $[E_\mathrm{PV,AC}]$   & PV-Ertrag (AC, gesamt) \dotfill & $\mathrm{kWh}$ \\
+    $[E_\mathrm{eig}]$     & Eigenverbrauch (Direktverbrauch und Batterieladung) \dotfill & $\mathrm{kWh}$ \\
+    $[E_\mathrm{eig,PV}]$  & PV-Direktverbrauch \dotfill & $\mathrm{kWh}$ \\
+    $[E_\mathrm{eig,BE}]$  & Batterieentladung \dotfill & $\mathrm{kWh}$ \\
+    $[E_\mathrm{ges}]$     & Elektrischer Gesamtenergieverbrauch \dotfill & $\mathrm{kWh}$ \\
+    $[E_\mathrm{Last}]$    & Elektrische Last \dotfill & $\mathrm{kWh}$ \\
+    $[E_\mathrm{NE}]$      & Netzeinspeisung \dotfill & $\mathrm{kWh}$ \\
+    $[E_\mathrm{NB}]$      & Netzbezug \dotfill & $\mathrm{kWh}$ \\
+    $[R_\mathrm{eig}]$     & Eigenverbrauchsquote \dotfill & $-$ \\
+    $[R_\mathrm{aut}]$     & Autarkiegrad \dotfill & $-$ \\
+    $[R_\mathrm{PV}]$      & PV-Ertragsverhältnis \dotfill & $-$ \\
+\end{tabular}
+
+\vspace{0.1cm}
+
+\textbf{Netto-Nullenergie Gebäude:} $R_\mathrm{PV} = 1$ und $R_\mathrm{eig} = R_\mathrm{aut,ges}$
+
+
+\subsection{Zykleneffizienzen und Gesamtsystemeffizienz}
+
+\subsubsection{DC-Zykleneffizienz}
+
+\vspace{0.1cm}
+
+$
+\boxed{
+\eta_\mathrm{Zykl,DC} = \frac{\mathrm{DC\text{-}Batterieentladung}}{\mathrm{DC\text{-}Batterieladung}}
+}
+$
 
+\subsubsection{AC-Zykleneffizienz}
 
+\vspace{0.1cm}
 
-\section{Batterien}
+$
+\boxed{
+\eta_\mathrm{Zykl,AC} = \frac{\mathrm{AC\text{-}Batterieentladung}}{\mathrm{AC\text{-}Batterieladung}}
+}
+$
 
-\textbf{Elektrochemische Speicher}
-\begin{itemize}
-    \item Zusammenschaltung mehrerer elektrochemischer Zellen
-    \item Jede elektrochemische Zelle besteht aus zwei räumlich getrennten Elektroden, 
-          die über einen Elektrolyten als ionenleitende Phase miteinander verbunden sind
-    \item An den Elektroden findet eine in zwei Halbreaktionen getrennte Redoxreaktion statt
-    \item Energie als im äußeren Stromkreis fließende Elektronen
-\end{itemize}
+\subsubsection{Gesamtsystemeffizienz}
 
-\textbf{Einteilung}
-\begin{itemize}
-    \item Primär- oder Sekundärzellen
-    \item Niedertemperatur-Batterien (z.B. Blei-, Nickel- und Lithium-Batterien)
-    \item Hochtemperatur-Batterien (z.B. Natrium-Batterien)
-    \item Interner oder externer Speicher (z.B. Redox-Flow-Batterien)
-\end{itemize}
+\vspace{0.1cm}
 
+$
+\boxed{
+\eta_\mathrm{System} = \frac{\mathrm{AC\text{-}Gesamtenergiebereitstellung\text{-}Energieaufnahme\ PV\text{-}System}}{\mathrm{PV\ MPP\text{-}Angebot}}
+}
+$
 
+\vspace{0.1cm}
 
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l p{6.5cm} l @{}}
+    $[\eta_\mathrm{Zykl,DC}]$   & DC-Zykleneffizienz \dotfill & $-$ \\
+    $[\eta_\mathrm{Zykl,AC}]$   & AC-Zykleneffizienz \dotfill & $-$ \\
+    $[\eta_\mathrm{System}]$    & Gesamtsystemeffizienz \dotfill & $-$ \\
+\end{tabular}
 
 
 
+\subsection{Bewertung von Batteriesystemen}
 
+\subsubsection{System Performance Index SPI}
 
+\vspace{0.1cm}
 
+$\boxed{
+\mathrm{SPI} = \frac{\text{Kosteneinsparung des realen Systems}}{\text{Kosteneinsparung des idealen Systems}}
+}$
 
+\vspace{0.1cm}
 
+$\boxed{
+\mathrm{SPI} = \frac{E_{\mathrm{G2AC,REF}} \cdot p_{\mathrm{G2AC}} - E_{\mathrm{G2AC,REAL}} \cdot p_{\mathrm{G2AC}} + E_{\mathrm{AC2G,REAL}} \cdot p_{\mathrm{AC2G}}}{E_{\mathrm{G2AC,REF}} \cdot p_{\mathrm{G2AC}} - E_{\mathrm{G2AC,IDEAL}} \cdot p_{\mathrm{G2AC}} + E_{\mathrm{AC2G,IDEAL}} \cdot p_{\mathrm{AC2G}}}
+}$
 
+\vspace{0.1cm}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l p{6.5cm} l @{}}
+    $[E_{\mathrm{G2AC,REF}}]$   & Netzbezug des Referenzsystems (ohne Speicher) \dotfill & $\mathrm{kWh}$ \\
+    $[E_{\mathrm{G2AC,REAL}}]$  & Netzbezug des realen Systems \dotfill & $\mathrm{kWh}$ \\
+    $[E_{\mathrm{G2AC,IDEAL}}]$ & Netzbezug des idealen Systems \dotfill & $\mathrm{kWh}$ \\
+    $[E_{\mathrm{AC2G,REAL}}]$  & Einspeisung des realen Systems \dotfill & $\mathrm{kWh}$ \\
+    $[E_{\mathrm{AC2G,IDEAL}}]$ & Einspeisung des idealen Systems \dotfill & $\mathrm{kWh}$ \\
+    $[p_{\mathrm{G2AC}}]$       & Netzbezugspreis \dotfill & $\frac{\mathrm{ct}}{\mathrm{kWh}}$ \\
+    $[p_{\mathrm{AC2G}}]$       & Einspeisevergütung \dotfill & $\frac{\mathrm{ct}}{\mathrm{kWh}}$ \\
+\end{tabular}

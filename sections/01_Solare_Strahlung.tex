@@ -1,26 +1,27 @@
 \section{Solare Strahlung}
-
-
 \subsection{Air Mass (AM)}
 
-\includegraphics[width=0.95\columnwidth]{images/V01_01.png}
+\includegraphics[width=0.85\columnwidth]{images/V01_01.jpg}
 
-$\boxed{x = \frac{1}{\sin(\gamma_s)}}$
+$\boxed{x = \frac{1}{\sin(\gamma_s)}} \quad \boxed{\mathrm{MESZ} = \mathrm{MEZ} + 1 \ \mathrm{h}}$
 
 \renewcommand{\arraystretch}{1} % Erhöht Zeilenhöhe für bessere Lesbarkeit
-\begin{tabular}{@{} l p {4cm} l @{}}
-    [$x$]           & Air Mass Wert         \dotfill & 1            \\
-    $[\gamma_{s}]$  & Sonnenstandswinkel    \dotfill & $^\circ$     \\ 
+\begin{tabular}{@{} l p {5cm} l @{}}
+    $[x]$           & Air Mass Wert         \dotfill & -            \\
+    $[\gamma_{s}]$  & Sonnenstandwinkel, Sonnenhöhenwinkel    \dotfill & $^\circ$    \\ 
 \end{tabular}
 
+Tag- und Nachtgleiche Frühling bzw. Herbst $\rightarrow$ Azimut bei $90 \, ^\circ$ und $270 \, ^\circ$ 
+
+
 \subsection{Solar Spektrum}
-\includegraphics[width=0.95\columnwidth]{images/V01_01.1.png}\\
+\includegraphics[width=0.85\columnwidth]{images/V01_01.1.png}\\
 
 \renewcommand{\arraystretch}{1.2} % Erhöht Zeilenhöhe für bessere Lesbarkeit
 \begin{tabular}{@{} l p {4cm} l @{}}
     $[E_{e,\lambda}]$   & Spektrake Bestrahlungsstärke  \dotfill & $\frac{\watt}{\meter^2 \cdot \text{n} \meter}$ \\
     $[E_{S}]$           & Solarkonstante                \dotfill & $\frac{\watt}{\meter^2}$ \\
-    $[\lambda]$         & Wellenlänge                   \dotfill & $\text{n} \meter$ \\ 
+    $[\lambda]$         & Wellenlänge                    \dotfill & $\text{n} \meter$ \\ 
 \end{tabular}
 
 \subsubsection{Berechnung der Solarkonstante $E_S$}
@@ -30,42 +31,118 @@ $E_S = \frac{\text{Strahlungsleistung}}{\text{Kugeloberfläche}}
 = 1361 \, \frac{\text{W}}{\text{m}^2}$
 
 \subsection{Global-, Direkt- und Diffusstrahlung}
-\includegraphics[width=0.95\columnwidth]{images/V01_02.png}
 
-$\boxed{E_G = E_{Dir} + E_{Diff}}$
+\subsubsection{Strahlungssituation bei geneigten Flächen}
 
-\renewcommand{\arraystretch}{1.2} % Erhöht Zeilenhöhe für bessere Lesbarkeit
-\begin{tabular}{@{} l p {4cm} l @{}}
-    $[E_{G}]$       & Globalstrahlung  \dotfill & $\frac{\watt}{\meter^2}$ \\
-    $[E_{Dir}]$     & Direktstrahlug   \dotfill & $\frac{\watt}{\meter^2}$ \\
-    $[E_{Diff}]$    & Diffusstrahlung  \dotfill & $\frac{\watt}{\meter^2}$ \\ 
+\includegraphics[width=0.8\columnwidth]{images/Strahlungssituation_1.jpg}
+
+$\boxed{E_{\mathrm{Gen}} = E_{\mathrm{Dir\_Gen}} + E_{\mathrm{Diffus\_Gen}} + E_{\mathrm{Refl\_Gen}}}$ 
+\renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{@{} l p{2cm} l @{}}
+        $[E_\mathrm{...}]$   & Strahlung \dotfill  & $\frac{\mathrm{W}}{\mathrm{m^2}}$ \\
+    \end{tabular}
+
+
+
+\subsubsection{Direktstrahlung}
+
+\begin{minipage}[c]{0.48\columnwidth}
+    \begin{center}
+       \includegraphics[width=0.95\textwidth]{images/Strahlungssituation_2.jpg} 
+    \end{center}
+\end{minipage}
+\begin{minipage}[c]{0.48\columnwidth}
+    \begin{center}
+       \includegraphics[width=0.95\textwidth]{images/Strahlungssituation_3.jpg} 
+    \end{center}
+\end{minipage}
+
+$\boxed{P_{\mathrm{Opt}} = E_{\mathrm{Dir\_H}} \cdot A_{\mathrm{H}}}
+\quad 
+\boxed{P_{\mathrm{Opt}} =   E_{\mathrm{Direkt\_Senkrecht}} \cdot A_{\mathrm{Senkrecht}}}
+$
+
+$
+\boxed{A_{\mathrm{Senkrecht}} = A_{\mathrm{H}} \cdot \sin(\gamma_{\mathrm{S}})} 
+\quad
+\boxed{A_{\mathrm{Senkrecht}} = A_{\mathrm{Gen}} \cdot \sin(\mathrm{\chi})}
+\quad 
+\boxed{\chi = \gamma_{\mathrm{S}} + \beta}
+$
+
+$
+\boxed{E_{\mathrm{Direkt\_Gen}} = E_{\mathrm{Direkt\_H}} \cdot \frac{\sin(\gamma_{\mathrm{S}} + \beta)}{\sin( \gamma_{\mathrm{S}})}}
+$
+
+\begin{minipage}[t]{0.53\columnwidth}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{@{} l p{3.2cm} l @{}}
+        $[A_\mathrm{H}]$         & Horizontale Fläche \dotfill                      & $\mathrm{m^2}$ \\
+        $[A_\mathrm{Senkr.}]$    & Fläche $\perp$ zu Einfalls-Rtg \dotfill         & $\mathrm{m^2}$ \\
+        $[A_\mathrm{Gen}]$       & Fläche in Generatorebene \dotfill                & $\mathrm{m^2}$ 
+    \end{tabular}
+\end{minipage}
+\hfill
+\vrule width 1pt
+\hfill
+\begin{minipage}[t]{0.42\columnwidth}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{@{} l p{2.7cm} l @{}}
+        $[\gamma_\mathrm{s}]$    & Sonnenhöhenwinkel \dotfill                       & $^\circ$ \\
+        $[\beta]$                & Anstellwinkel \dotfill              & $^\circ$ \\
+        $[\chi]$                 & Hilfswinkel \dotfill                             & $^\circ$ 
+    \end{tabular}
+\end{minipage}
+
+\vspace{0.1cm}
+
+\textcolor{red}{H} steht für \textcolor{red}{Horizontal}, Anstellwinkel wird auch Elevationswinkel genannt
+
+
+
+\subsubsection{Diffusstrahlung}
+
+\begin{minipage}[c]{0.48\columnwidth}
+    \begin{center}
+       \includegraphics[width=0.9\textwidth]{images/Strahlungssituation_4.jpg} 
+    \end{center}
+\end{minipage}
+\begin{minipage}[c]{0.48\columnwidth}
+    \begin{center}
+       \includegraphics[width=0.9\textwidth]{images/Strahlungssituation_5.jpg} 
+    \end{center}
+\end{minipage}
+
+$
+\boxed{E_{\mathrm{Diffus\_Gen}} = \frac{E_{\mathrm{Diffus\_H}} \cdot (1 + \cos(\beta))}{2}}
+\overset{\beta = 90 ^\circ}{\longrightarrow}
+\boxed{E_{\mathrm{Diffus\_Gen}} = \frac{E_{\mathrm{Diffus\_H}}}{2}}
+$
+
+$\boxed{E_{\mathrm{Diffus\_Gen}} = \frac{(E_{\mathrm{G\_H}} - E_{\mathrm{Direkt\_H}}) \cdot (1 + \cos(\beta))}{2}}$
+
+\subsubsection{Reﬂektierte Strahlung}
+
+$
+\boxed{E_{\mathrm{Refl\_Gen}} = \frac{E_{\mathrm{G}} \cdot (1 - \cos(\beta)) \cdot ALB}{2}}
+$
+\renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{@{} l p{3.5cm} l @{}}
+        $[E_\mathrm{G}]$   & Global Strahlung, $1000 \, \mathrm{\frac{W}{m^2}}$ \dotfill  & $\frac{\mathrm{W}}{\mathrm{m^2}}$ \\
+    \end{tabular}
+
+\vspace{0.1cm}
+
+\begin{tabular}{|ll|ll|}
+\hline
+\textbf{Material} & \textbf{Albedo \textit{ALB}} & \textbf{Material} & \textbf{Albedo \textit{ALB}} \\
+\hline
+Gras (Juli, August) & 0{,}25 & Asphalt & 0{,}15 \\
+Rasen & 0{,}18\dots0{,}23 & Beton, sauber & 0{,}30 \\
+unbestellte Felder & 0{,}26 & Beton, verwittert & 0{,}20 \\
+Wälder & 0{,}05\dots0{,}18 & Schneedecke, neu & 0{,}80\dots0{,}90 \\
+Heidefläche & 0{,}10\dots0{,}25 & Schneedecke, alt & 0{,}45\dots0{,}70 \\
+\hline
 \end{tabular}
-
-\includegraphics[width=0.65\columnwidth]{images/V01_03.png}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

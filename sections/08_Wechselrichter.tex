@@ -1,0 +1,216 @@
+\columnbreak
+\section{Wechselrichter WR}
+\subsection{Wirkungsgrade WR}
+
+$
+\boxed{
+\eta_\text{MPPT} = \frac{P_\text{DC}}{P_\text{MPP}}
+}$
+$
+\boxed{
+\eta_\text{Um} = \frac{P_\text{AC}}{P_\text{DC}}
+}$
+$
+\boxed{
+\eta_\text{WR} = \eta_\text{MPPT} \cdot \eta_\text{Um}
+}$
+$
+\boxed{
+\eta_\text{WR} = \frac{P_\text{AC}}{P_\text{MPP}}
+}
+$
+
+\vspace{0.1cm}
+
+\begin{minipage}[t]{0.48\columnwidth}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{@{} l p{2.8cm} l @{}}
+        $[\eta_\text{MPPT}]$ & Anpassungsw \dotfill & $\mathrm{-}$ \\
+        $[\eta_\text{Um}]$   & Umwandlungsw \dotfill   & $\mathrm{-}$ \\
+        $[\eta_\text{WR}]$   & Gesamtw \dotfill & $\mathrm{-}$ \\
+    \end{tabular}
+\end{minipage}
+\hfill
+\vrule width 1pt
+\hfill
+\begin{minipage}[t]{0.48\columnwidth}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{@{} l p{2.8cm} l @{}}
+        $[P_\text{MPP}]$     & MPP-Leistung \dotfill     & $\mathrm{W}$ \\
+        $[P_\text{DC}]$      & Leist. WR-Eingang \dotfill   & $\mathrm{W}$ \\
+        $[P_\text{AC}]$      & Leist. WR-Ausgang \dotfill  & $\mathrm{W}$ \\
+    \end{tabular}
+\end{minipage}
+
+\subsection{Dimmensionierung WR}
+
+Typischer Wert: $SR_{\mathrm{AC}} = 1$, \quad Je nach Standort, AusRtg und Neigung: $ 0.8 \ldots 1.2$
+
+\vspace{0.1cm}
+
+$
+\boxed{SR_{\mathrm{AC}} = \frac{P_{\mathrm{STC}}}{P_{\mathrm{AC\_N}}}}
+$
+$
+\boxed{SR_{\mathrm{AC}} = \frac{n \cdot P_{\mathrm{STC,Modul}}}{P_{\mathrm{AC,N}}}}
+$
+$
+\boxed{
+n = \frac{SR_{\mathrm{AC}} \cdot P_{\mathrm{AC\_N}}}{P_{\mathrm{STC,Modul}}}
+}
+$
+
+\vspace{0.1cm}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l p{6.5cm} l @{}}
+    $[SR_{\mathrm{AC}}]$   & Auslegungsfaktor (Sizing Ratio) \dotfill                        & $-$ \\
+    $[P_{\mathrm{STC}}]$   & Summe aller $P_{\mathrm{STC,Modul}}$ (bei STC) \dotfill         & $\mathrm{kW}$ \\
+    $[P_{\mathrm{AC\_N}}]$  & Ausgangs-Nennleistung des Wechselrichter \dotfill                   & $\mathrm{kW}$ \\
+    $[P_{\mathrm{STC,Modul}}]$   & Modulleistung bei STC \dotfill         & $\mathrm{kW}$ \\
+    $[n]$   & Anzahl Module \dotfill                        & $-$ \\
+\end{tabular}
+
+
+\vspace{0.1cm}
+
+
+
+
+
+\subsection{Spannungsdimensionierung von PV-Strings}
+
+\subsubsection{Maximale Anzahl Module in einem String}
+
+\begin{minipage}[t]{0.48\columnwidth}
+\textbf{Aufgrund max zuläss. Spannung:}
+
+$
+\boxed{
+n_{\mathrm{Max,L}} = \frac{U_{\mathrm{WR,Max}}}{U_{\mathrm{L,Modul \, (-10 \, ^\circ\mathrm{C})}}}
+}
+$
+\end{minipage}
+\hfill
+\vrule width 1pt
+\hfill
+\begin{minipage}[t]{0.48\columnwidth}
+\textbf{Aufgrund  MPP-Arbeitsbereichs:}
+
+$
+\boxed{
+n_{\mathrm{Max,MPP}} = \frac{U_{\mathrm{WR,MPP,Max}}}{U_{\mathrm{MPP,Modul \, (-10 \, ^\circ\mathrm{C})}}}
+}
+$
+\end{minipage}
+
+\vspace{0.1cm}
+
+
+
+\subsubsection{Minimale Anzahl Module in einem String}
+
+\textbf{Aufgrund des MPP-Arbeitsbereichs:}
+
+$
+\boxed{
+n_{\mathrm{Min,MPP}} = \frac{U_{\mathrm{WR,MPP,Min}}}{U_{\mathrm{MPP,Modul \, (70 \, ^\circ\mathrm{C})}}}
+}
+$
+
+\vspace{0.1cm}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l p{6.5cm} l @{}}
+    $[n_{\mathrm{Max,L}}]$        & Max. Anzahl Module (Spannungsgrenze) \dotfill & $-$ \\
+    $[n_{\mathrm{Max,MPP}}]$      & Max. Anzahl Module (MPP-Spannungsbereich) \dotfill & $-$ \\
+    $[n_{\mathrm{Min,MPP}}]$      & Min. Anzahl Module (MPP-Spannungsbereich) \dotfill & $-$ \\
+    $[U_{\mathrm{WR,Max}}]$       & Max. Eingangsspannung des WR \dotfill & $\mathrm{V}$ \\
+    $[U_{\mathrm{WR,MPP,Max}}]$   & Max. MPP-Spannungsbereich WR \dotfill & $\mathrm{V}$ \\
+    $[U_{\mathrm{WR,MPP,Min}}]$   & Min. MPP-Spannungsbereich WR \dotfill & $\mathrm{V}$ \\
+    $[U_{\mathrm{L,Modul \, (-10 \, ^\circ\mathrm{C})}}]$    & Leerlaufspannung Modul bei $\vartheta_{\mathrm{Zell}} =  -10 \, ^\circ \mathrm{C}$ \dotfill & $\mathrm{V}$ \\
+    $[U_{\mathrm{MPP,Modul \, (70 \, ^\circ\mathrm{C})}}]$ & MPP-Spannung pro Modul bei Temperatur $\vartheta_{\mathrm{Zell}} = 70 \, ^\circ\mathrm{C}$ \dotfill & $\mathrm{V}$ \\
+\end{tabular}
+
+
+
+\subsection{Stromdimensionierung von PV-Strings}
+
+\subsubsection{Maximale Anzahl paralleler Strings}
+
+\begin{minipage}[t]{0.48\columnwidth}
+\textbf{Aufgr. max zuläss. Kurzschlussstrom:}
+
+$
+\boxed{
+n_{\mathrm{String,K}} = \frac{I_{\mathrm{WR,Max}}}{I_{\mathrm{K,Modul \, (70 \, ^\circ\mathrm{C})}}}
+}
+$
+\end{minipage}
+\hfill
+\vrule width 1pt
+\hfill
+\begin{minipage}[t]{0.48\columnwidth}
+\textbf{Aufgr. max Eingangsstrom:}
+
+$
+\boxed{
+n_{\mathrm{String,MPP}} = \frac{I_{\mathrm{WR,Eingang,Max}}}{I_{\mathrm{MPP,Modul \, (70 \, ^\circ\mathrm{C})}}}
+}
+$
+\end{minipage}
+
+\vspace{0.1cm}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l p{6.5cm} l @{}}
+    $[n_{\mathrm{String,K}}]$        & Max. Anzahl paralleler Strings (Kurzschlussgrenze) \dotfill & $-$ \\
+    $[n_{\mathrm{String,MPP}}]$      & Max. Anzahl paralleler Strings (Eingangsstromgrenze) \dotfill & $-$ \\
+    $[I_{\mathrm{WR,Max}}]$          & Max. PV-Kurzschlussstrom ($\mathrm{I_{SC\_PV}}$) \dotfill & $\mathrm{A}$ \\
+    $[I_{\mathrm{WR,Eingang,Max}}]$  & Max. Eingangsstrom ($\mathrm{I_{DCmax}}$)\dotfill & $\mathrm{A}$ \\
+    $[I_{\mathrm{K,Modul \, (70 \, ^\circ\mathrm{C})}}]$     & Kurzschlussstrom des Moduls bei $T = 70 \, ^\circ\mathrm{C}$ \dotfill & $\mathrm{A}$ \\
+    $[I_{\mathrm{MPP,Modul \, (70 \, ^\circ\mathrm{C})}}]$   & MPP-Strom des Moduls bei $T = 70 \, ^\circ\mathrm{C}$ \dotfill & $\mathrm{A}$ \\
+\end{tabular}
+
+
+\subsection{PV-Netzkopplung}
+
+\begin{tabular}{|l|p{3cm}|p{3.8cm}|}
+\hline
+\textbf{Aspekt} & \textbf{Früher: netzfolgend} & \textbf{Heute: netzführend}  \\
+\hline
+Frequenzhaltung & Abschaltung bei f > 50{,}2 Hz und f < 49{,}5 Hz & Kennlinie P(f) bei 50{,}2 bis 51{,}5 Hz  
+ \\
+\hline
+Wirkleistung & Keine Regelung / Volleinspeisung & 
+\begin{itemize}
+  \item Wirkleistungsbegrenzung (z.\,B. 70\,\%)
+  \item Wirkleistungsreduktion auf Anforderung durch Netzbetreiber (Rundsteuersignal)
+\end{itemize} \\
+\hline
+Blindleistung & Cos~$\varphi$ = 1 & Cos~$\varphi$ -0{,}8 bis 0{,}8 (feste Einstellung, Rundsteuersignal, Q(U))  \\
+\hline
+Immunität & Abschaltung & Immunität gegen Netzstörung (Fault Ride Through)  \\
+\hline
+\end{tabular}
+
+\vspace{0.1cm}
+
+\textbf{Zukünftig: netzbildend}
+
+\begin{minipage}[t]{0.48\columnwidth}
+\begin{itemize}
+  \item Systemspannung bilden
+  \item Fehlerströme einspeisen
+  \item Aktiv Oberwellen filtern
+  \item Spannungsasymmetrien ausgleichen
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\columnwidth}
+\begin{itemize}
+  \item Virtuelle Trägheit
+  \item Erweitertes Fault Ride Through
+  \item Netzstabilisierende Unterstützung
+\end{itemize}
+\end{minipage}

@@ -1,4 +1,18 @@
+\columnbreak
 \section{Heimspeicher}
+
+\subsection{Betriebsstrategien für Heimspeichersysteme}
+
+\begin{itemize}
+    \item PV-Eigenverbrauchssteigerung
+    \item Reduktion der Netzbezugsleistung (Peak Shaving)
+    \item Reduktion der Netzeinspeiseleistung
+    \item Ausnutzung von Tarifunterschieden (Arbitrage)
+    \item Schwarmspeicher / Pooling von Speichern, um Systemdienstleistungen zur Verfügung zu stellen (insbesondere Regelleistung)
+    \item (Betriebsstrategien zur Verlängerung der Lebensdauer)
+\end{itemize}
+
+
 
 \subsection{Alternative Speichernutzung für Heimspeicher}
 
@@ -30,9 +44,10 @@
 
 
 \subsection{Reduktion von Netzbezugsleistung}
-
-\includegraphics[width=0.98\linewidth]{images/Reduktion_Netzbezugsleistung.png}
-
+\begin{centering}
+    \includegraphics[width=0.9\linewidth]{images/Reduktion_Netzbezugsleistung.png}
+\end{centering}
+\vspace{-0.1cm}
 \begin{itemize}
     \item Minimieren der monatlichen Leistungsspitze
     \begin{itemize}
@@ -42,7 +57,7 @@
 
 
 
-\subsubsection{... durch Wärmepumpe und Betterie}
+\subsubsection{... durch Wärmepumpe und Batterie}
 
 \begin{itemize}
     \item Jahresdauerlinie Netzbezug
@@ -52,26 +67,45 @@
     \end{itemize}
 \end{itemize}
 
+\begin{comment}
 \vspace{0.15cm}
-
-\includegraphics[width=0.98\linewidth]{images/Durch_Wärmepumpen_und_Batterien_1.png}
-
+\begin{centering}
+\includegraphics[width=0.9\linewidth]{images/Durch_Wärmepumpen_und_Batterien_1.png}
+\textcolor{blue}{Reduktion Bezugspitzen auf 3kW mit Batterie}\\
+\textcolor{yellow}{HH-Stromprofil}\\
+\textcolor{grey}{Steuerung WP}\\
+\end{centering}
 \vspace{0.15cm}
 
 \includegraphics[width=0.35\linewidth]{images/Durch_Wärmepumpen_und_Batterien_2.png}
-
+\end{comment}
 
 
 \subsection{Reduktion von Einspeiseleistung}
+\begin{minipage}[ht]{0.52\columnwidth}
+\raggedright
+    \textbf{Konventionelle Speicherung}\\
+    \includegraphics[height=2.2cm]{images/Konventionelle_Speicherung.png} 
+\end{minipage}
+\begin{minipage}[ht]{0.5\columnwidth}
+\raggedright
+    \textbf{Netzoptimierte Speicherung}\\
+    \includegraphics[height=2.2cm]{images/Netzoptimierte_Speicherung.png}
+\end{minipage}
 
-\subsubsection{Konventionelle Speicherung}
-\includegraphics[width=0.98\linewidth]{images/Konventionelle_Speicherung.png}
+\subsection{Betriebsstrategien zur Verlängerung der Lebensdauer}
 
-\subsubsection{Netzoptimierte Speicherung}
-\includegraphics[width=0.98\linewidth]{images/Netzoptimierte_Speicherung.png}
+\includegraphics[width=0.98\columnwidth]{images/Betriebsstrategie_zur_Verlängerung_der_Lebensdauer.png}
 
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Ladestrategie} & \textbf{Zeitpunkt}       & \textbf{Standzeit $>$ 90\,\% Ladezustand} \\ \midrule
+Frühzeitig              & Vormittags                  & 99\,h                                     \\
+Prognosebasiert         & Mittags                  & 72\,h                                     \\
+Prognosebasiert         & Nachmittags              & 43\,h                                     \\ \bottomrule
+\end{tabular}
 
-
+\columnbreak
 \subsection{Reduktion der Netzeinspeiseleistung}
 
 \begin{itemize}
@@ -82,9 +116,10 @@
     \end{itemize}
 \end{itemize}
 
-\vspace{0.15cm}
+\vspace{0.1cm}
 
-\includegraphics[width=0.98\linewidth]{images/Reduktion_der_Netzeinspeiseleistung.png}
+\includegraphics[width=0.9\linewidth]{images/Reduktion_der_Netzeinspeiseleistung.png}
+
 
 \subsubsection{Beispiel mit 8 kWp}
 \begin{itemize}
@@ -99,7 +134,6 @@
 \begin{minipage}[c]{0.49\columnwidth}
     \includegraphics[width=0.98\columnwidth]{images/Reduktion_der_Netzeinspeiseleistung_Beispiel_2.png}
 \end{minipage}
-
 
 \subsubsection{Abregelungsverluste}
 
@@ -116,7 +150,6 @@ Die resultierende Höhe der \textbf{Abregelungsverluste} hängt unter anderem vo
   \item Abregelungsverhalten (Möglichkeit der stufenlosen Abregelung)
 \end{itemize}
 
-
 \subsubsection{Prognosebasierte Steuerung mit selbstlernendem Algorithmus}
 
 \begin{tabular}{|l|c|c|c|}
@@ -131,30 +164,11 @@ Die resultierende Höhe der \textbf{Abregelungsverluste} hängt unter anderem vo
     \hline
 \end{tabular}
 
-\vspace{0.15cm}
-
 S1: Normale Steuerung\\
 S2: Leistungsreduzierung auf 70\,\%\\
 S3: Leistungsreduzierung auf 50\,\%
 
-\subsection{Betriebsstrategien zur Verlängerung der Lebensdauer}
-
-\includegraphics[width=0.98\columnwidth]{images/Betriebsstrategie_zur_Verlängerung_der_Lebensdauer.png}
-
-\vspace{0.15cm}
-
-\begin{tabular}{@{}lll@{}}
-\toprule
-\textbf{Ladestrategie} & \textbf{Zeitpunkt}       & \textbf{Standzeit $>$ 90\,\% Ladezustand} \\ \midrule
-Frühzeitig              & Vormittags                  & 99\,h                                     \\
-Prognosebasiert         & Mittags                  & 72\,h                                     \\
-Prognosebasiert         & Nachmittags              & 43\,h                                     \\ \bottomrule
-\end{tabular}
-
-\textbf{Hinweis:} Je kürzer die Lithium-Batterie vollständig geladen ist, desto langsamer altert sie.
-
-
-
+\textcolor{red}{\textbf{Hinweis:} Je kürzer die Lithium-Batterie vollständig geladen ist, desto langsamer altert sie.}
 
 \subsection{Elektromobilität als Heimspeicher}
 \begin{itemize}

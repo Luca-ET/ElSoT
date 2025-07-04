@@ -1,0 +1,212 @@
+\columnbreak
+\section{Gleichstrom Komponenten}
+%\begin{comment}
+\subsection{Aufbau PV-Anlage}
+\includegraphics[width=0.95\columnwidth]{images/Aufbau_PV-Anlage.png}
+
+\subsection{Gleichstromverkabelung}
+\subsubsection{Solarstecker}
+
+\begin{itemize}
+    \item MC4 Solarstecker (quasi Standard)
+\end{itemize}
+
+\begin{minipage}[t]{0.48\columnwidth}
+    \myul{\textbf{MC4}}\\
+    \includegraphics[width=0.95\columnwidth]{images/MC4.jpg}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\columnwidth}
+    \myul{\textbf{MC4-Evo 2000}}\\
+    \includegraphics[width=0.95\columnwidth]{images/MC4-Evo 2000.jpg}
+\end{minipage}
+
+\vspace{0.25cm}
+
+\subsubsection{Gleichstromkabel}
+
+\begin{minipage}[t]{0.48\columnwidth}
+    \myul{\textbf{MC FLEX-SOL-EVO-DX}}\\
+    \includegraphics[width=0.95\columnwidth]{images/MC_FLEX-SOL-EVO-DX.png}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\columnwidth}
+    \myul{\textbf{Anforderungen}}\\
+    \begin{itemize}
+        \item Doppelte Isolation\\
+                (Schutz gegen Kurzschluss)
+        \item UV-Beständigkeit
+        \item Schwer entflammbar 
+        \item Für hohe Temperaturen
+\end{itemize}
+\end{minipage}
+%\end{comment}
+
+
+\subsection{Tiefstellsetzer, Buck-Converter}
+
+\begin{minipage}[c]{0.48\columnwidth}
+    \begin{center}
+        \includegraphics[width=1\columnwidth]{images/Tiefsetzsteller_Vereinfacht.png} 
+    \end{center}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.48\columnwidth}
+    \begin{center}
+        \includegraphics[width=0.95\columnwidth]{images/Tiefsetzsteller_DutyCycle.png}
+    \end{center}
+\end{minipage}
+
+
+
+$
+\boxed{
+\bar{u}_2 = \frac{T_E}{T} \cdot U_1 = a \cdot U_1
+}
+$
+\quad
+$
+\boxed{
+a = \frac{T_E}{T}
+}
+$
+\quad
+$
+\boxed{T = T_E +T_A}
+$
+
+\begin{minipage}[t]{0.48\columnwidth}
+    \renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l p{3.1cm} l @{}}
+    $[T]$                   & Periodendauer PWM \dotfill          & $\mathrm{s}$ \\
+    $[T_{\mathrm{E}}]$      & Einschaltdauer PWM \dotfill         & $\mathrm{s}$ \\
+    $[T_{\mathrm{A}}]$      & Ausschaltdauer PWM \dotfill         & $\mathrm{s}$ \\
+    $[U_1]$                 & Eingangsspannung \dotfill               & $\mathrm{V}$ \\
+    $[a]$                   & Tastgrad (Duty Cycle) \dotfill          & $-$ \\
+\end{tabular}
+\end{minipage}
+\hfill
+\vrule width 1pt
+\hfill
+\begin{minipage}[t]{0.48\columnwidth}
+    \renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l p{3.1cm} l @{}}
+    $[U_2]$                 & Ausgangsspannung \dotfill               & $\mathrm{V}$ \\
+    $[u_{\mathrm{D}}]$      & Spannung über Diode \dotfill            & $\mathrm{V}$ \\
+    $[u_{\mathrm{L}}]$      & Spannung über Spule \dotfill            & $\mathrm{V}$ \\
+    $[i_{\mathrm{L}}]$      & Strom durch Spule \dotfill              & $\mathrm{A}$ \\
+    $[L]$                   & Induktivität der Spule \dotfill         & $\mathrm{H}$ \\
+\end{tabular}
+\end{minipage}
+
+
+\columnbreak
+\subsubsection{Effektives Schema Tiefstellsetzer, Buck-Converter}
+\includegraphics[width=1\columnwidth]{images/Tiefsetzsteller_1.png}
+
+\vspace{0.25cm}
+
+\includegraphics[width=0.8\columnwidth]{images/Tiefsetzsteller_2.png}
+
+\vspace{0.25cm}
+
+$
+\boxed{u_D = U_1}
+$
+\quad
+$
+\boxed{u_L = u_D - U_2 = U_1 - U_2}
+$
+\quad
+$
+\boxed{u_L(t) = L \cdot \frac{\mathrm{d}i_L}{\mathrm{d}t}}
+$
+\quad
+$
+\boxed{U_2 = a \cdot U_1}
+$
+
+\vspace{0.25cm}
+
+\begin{minipage}[t]{0.48\columnwidth}
+    \myul{\textbf{Strom Anstiegsgeschwindigkeit ($T_E$)}}\\
+    $
+        \boxed{\frac{\mathrm{d}i_L}{\mathrm{d}t} = \frac{u_L}{L} = \frac{U_1 - U_2}{L}}
+    $
+    \quad
+    $t \in [0, T_E]$
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\columnwidth}
+    \myul{\textbf{Strom Abfallstiegsgeschwindigkeit ($T_A$)}}\\
+    $
+        \boxed{\frac{\mathrm{d}i_L}{\mathrm{d}t} = \frac{u_L}{L} = \frac{-U_2}{L}}
+    $
+    \quad
+    $t \in [T_E, T_A]$
+\end{minipage}
+
+\vspace{0.25cm}
+
+\subsection{Hochstellsetzer, Boost-Converter}
+
+\includegraphics[width=1\columnwidth]{images/Hochstellsetzer_1.png}
+
+\vspace{0.25cm}
+
+\includegraphics[width=0.8\columnwidth]{images/Hochstellsetzer_2.png}
+
+\vspace{0.25cm}
+
+
+Nach der Zeitdauer $T_E$ wird der Transistor gesperrt. Die Drossel versucht, ihren Strom aufrecht zu erhalten. Wir nehmen an, dass $U_2 > U_1$ ist. In diesem Fall treibt die Drossel den Strom langsam absinkend über die Diode $D$ auf den Ausgang.
+
+Die Spannung an der Drossel ergibt sich zu:
+
+\begin{minipage}[t]{0.23\columnwidth}
+\textbf{\myul{Während $T_E$}}
+
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.73\columnwidth}
+\textbf{\myul{Während $T_A$}}
+
+\end{minipage}
+
+
+\begin{minipage}[t]{0.23\columnwidth}
+
+$
+\boxed{\frac{\mathrm{d}i_L}{\mathrm{d}t} = \frac{u_L}{L} = \frac{U_1}{L}}
+$
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.73\columnwidth}
+
+$
+\boxed{u_L = U_1 - U_2}
+$
+$
+\boxed{\frac{\mathrm{d}i_L}{\mathrm{d}t} = \frac{u_L}{L} = \frac{U_1 - U_2}{L}}
+$
+\end{minipage}
+
+
+
+
+
+\subsection{Berechnung der Ausgangsspannung}
+
+Aus der Beziehung zwischen Ein- und Ausgangsspannung ergibt sich zunächst:
+
+$
+\boxed{U_2 \cdot T_A = U_1 \cdot T}
+$
+
+Daraus folgt für die Ausgangsspannung:
+
+$
+\boxed{U_2 = \frac{T}{T_A} \cdot U_1 = \frac{T}{T - T_E} \cdot U_1 = \frac{1}{1 - \frac{T_E}{T}} \cdot U_1 = \frac{1}{1 - a} \cdot U_1}
+$
+
+

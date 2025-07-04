@@ -1,7 +1,6 @@
 # TexFoSaTemplate
 LaTeX  Formelsammlungs-template
 
-
 # Documentation
 ## Sectioning
 Section commands (`\section{}`{:.TeX} , `\subsection{}`{:.TeX} , `\subsubsection{}`{:.TeX}) have been expanded to take an additional (optional) argument to reference pages in a script. It can be used as follows:

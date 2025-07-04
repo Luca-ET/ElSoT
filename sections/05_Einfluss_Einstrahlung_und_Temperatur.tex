@@ -1,0 +1,93 @@
+\columnbreak
+\section{Einfluss von Einstrahlung und Temperatur}
+
+
+
+\subsection{Standardtestbedingungen (STC - Standard Test Conditions)}
+\textbf{Einheitliche Bedingungen für die Bestimmung der Nennleistung von Solarmodulen}
+
+\vspace{0.1cm}
+
+$\boxed{\mathrm{Einstrahlung:\,\,\,} G_{STC} = 1000 \, \frac{\mathrm{W}}{\mathrm{m^2}}}$
+
+$\boxed{\mathrm{Zelltemperatur:\,\,\,} \vartheta_{\mathrm{Zell},\mathrm{STC}} = 25 \, {^\circ \mathrm{C}}}$
+
+$\boxed{\text{Luftmasse AM:\,\,\,} 1.5}$
+
+\subsection{Leistung in Abhängigkeit von Einstrahlung und Temperatur}
+
+Die Leistung $P_{MPP}$ am Maximum Power Point (MPP) einer Solarzelle berechnet sich nach folgender Formel:
+
+$\boxed{
+P_{\mathrm{MPP}} = P_{\mathrm{STC}} \cdot \frac{G}{G_{\mathrm{STC}}} \cdot \left[1 + \alpha_{\mathrm{P}} \cdot \left(\vartheta_{\mathrm{Zell}} - \vartheta_{\mathrm{Zell},\mathrm{STC}}\right) \right]
+}$
+
+\vspace{0.1cm}
+
+\begin{minipage}[c]{0.43\columnwidth}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{@{} l p{2.5cm} l @{}}
+        $[P_{\mathrm{MPP}}]$              & MPP-Leistung \dotfill                & $\mathrm{W}$ \\
+        $[P_{\mathrm{STC}}]$              & STC-Leistung \dotfill           & $\mathrm{W}$ \\
+        $[G]$                             & Globalstrahlung \dotfill                                 & $\frac{\mathrm{W}}{\mathrm{m^2}}$ \\
+        $[G_{\mathrm{STC}}]$              & Globalstr. bei STC \dotfill            & $\frac{\mathrm{W}}{\mathrm{m^2}}$ 
+    \end{tabular}
+\end{minipage}
+\hfill
+\vrule width 1pt
+\hfill
+\begin{minipage}[c]{0.49\columnwidth}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{@{} l p{2.6cm} l @{}}
+        $[\alpha_{\mathrm{P}}]$           & Leistungs Temp-koeff \dotfill              & $\frac{\%}{^\circ\mathrm{C}}$ \\
+        $[\vartheta_{\mathrm{Zell}}]$     & Zelltemperatur \dotfill                                  & $^\circ\mathrm{C}$ \\
+        $[\vartheta_{\mathrm{Zell},\mathrm{STC}}]$ & Zelltemp bei STC \dotfill & $^\circ\mathrm{C}$ 
+    \end{tabular}
+\end{minipage}
+
+
+
+\subsection{Strom und Spannung (Einstrahlung und Temperatur)}
+
+Die Abhängigkeit von Strom und Spannung einer Solarzelle von der Einstrahlung und Temperatur wird durch folgende Gleichungen beschrieben:
+
+\vspace{0.1cm}
+
+$\boxed{
+I_{\mathrm{K}} = I_{\mathrm{K},\mathrm{STC}} \cdot \frac{G}{G_{\mathrm{STC}}} \cdot \left[1 + \alpha_{\mathrm{I}} \cdot \left(\vartheta_{\mathrm{Zell}} - \vartheta_{\mathrm{Zell},\mathrm{STC}}\right) \right]
+}$\quad \textcolor{red}{!$\alpha$ Unterschiedlich!}
+
+$\boxed{
+U_{\mathrm{L}} = U_{\mathrm{L},\mathrm{Grafik}} \cdot \left[1 + \alpha_{\mathrm{U}} \cdot \left(\vartheta_{\mathrm{Zell}} - \vartheta_{\mathrm{Zell},\mathrm{STC}}\right) \right]
+}$
+
+$\boxed{
+I_{\mathrm{MPP}} = I_{\mathrm{MPP},\mathrm{STC}} \cdot \frac{G}{G_{\mathrm{STC}}} \cdot \left[1 + \alpha_{\mathrm{I}} \cdot \left(\vartheta_{\mathrm{Zell}} - \vartheta_{\mathrm{Zell},\mathrm{STC}}\right) \right]
+}$
+
+$\boxed{
+U_{\mathrm{MPP}} = \frac{P_{\mathrm{MPP}}}{I_{\mathrm{MPP}}}
+}$\quad \textcolor{red}{Spannung immer über P \& I}
+
+$\boxed{
+R_{\mathrm{P\_max}} = \frac{U_{\mathrm{MPP}}}{I_{\mathrm{MPP}}}
+}$\quad \textcolor{red}{Spannung immer über P \& I}
+
+\vspace{0.1cm}
+
+\renewcommand{\arraystretch}{1.2} % Erhöht Zeilenhöhe für bessere Lesbarkeit
+\begin{tabular}{@{} l p{7cm} l @{}}
+    $[I_{\mathrm{K}}]$                           & Kurzschlussstrom ($G$, $[\vartheta_{\mathrm{Zell}}]$) \dotfill                & $\mathrm{A}$ \\
+    $[I_{\mathrm{K},\mathrm{STC}}]$              & Kurzschlussstrom bei Standardtestbedingungen \dotfill                         & $\mathrm{A}$ \\
+    $[U_{\mathrm{L}}]$                           & Leerlaufspannung ($G$, $[\vartheta_{\mathrm{Zell}}]$) \dotfill                & $\mathrm{V}$ \\
+    $[U_{\mathrm{L},\mathrm{Grafik}}]$           & Leerlaufspannung ($G$) aus Grafik \dotfill                                    & $\mathrm{V}$ \\
+    $[I_{\mathrm{MPP}}]$                         & Strom im Maximum Power Point ($G$, $[\vartheta_{\mathrm{Zell}}]$) \dotfill    & $\mathrm{A}$ \\
+    $[I_{\mathrm{MPP},\mathrm{STC}}]$            & Strom im Maximum Power Point bei STC \dotfill                                 & $\mathrm{A}$ \\
+    $[U_{\mathrm{MPP}}]$                         & Spannung im Maximum Power Point ($G$, $[\vartheta_{\mathrm{Zell}}]$) \dotfill & $\mathrm{V}$ \\
+    $[G]$                                        & Globalstrahlung \dotfill                                                      & $\frac{\mathrm{W}}{\mathrm{m^2}}$ \\
+    $[G_{\mathrm{STC}}]$                         & Globalstrahlung bei STC = 1000\,W/m² \dotfill                                 & $\frac{\mathrm{W}}{\mathrm{m^2}}$ \\
+    $[\alpha_{\mathrm{I}}]$                      & Temperaturkoeffizient des Kurzschlussstroms \dotfill                          & $\frac{\%}{^\circ\mathrm{C}}$ \\
+    $[\alpha_{\mathrm{U}}]$                      & Temperaturkoeffizient der Leerlaufspannung \dotfill                           & $\frac{\%}{^\circ\mathrm{C}}$ \\
+    $[\vartheta_{\mathrm{Zell}}]$                & Zelltemperatur \dotfill                                                       & $^\circ\mathrm{C}$ \\
+    $[\vartheta_{\mathrm{Zell},\mathrm{STC}}]$   & Zelltemperatur bei STC = $25^\circ\mathrm{C}$ \dotfill                        & $^\circ\mathrm{C}$ \\
+\end{tabular}

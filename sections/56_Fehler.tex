@@ -1,9 +1,15 @@
-\section{Fehler}
 
+\section{Fehler}
+\subsection{Unterscheidung von Fehlern}
+\begin{outline}
+    \1 Sicherheitsrelevante Fehler
+    \2 Feuer, Elektrischer Schlag usw.
+    \1 Performance/ Leistungsreduktion
+\end{outline}
 \subsection{Visuelle Inspektion}
 
 \begin{itemize}
-    \item Modulvorderseite
+    \item Modulvorderseites
     \begin{itemize}
       \item Delamination, Yellowing, Browning, Blasen, Glasbruch, Verschmutzung, \ldots
     \end{itemize}
@@ -41,18 +47,18 @@
   
 
   \subsection{Fehler bei PV-Modulen}
-
-  \begin{itemize}
+\begin{minipage}[c]{0.49\columnwidth}
+\begin{itemize}
     \item Verfärbung
     \item Delamination
-    \item Rückseitenfolie
-        \begin{itemize}
-            \item Delamination, Rissbilidung, Chalking
-        \end{itemize}
     \item Brandflecken
     \item Glasbruch
     \item Anschlussdose
     \item Verschmutzung
+\end{itemize}
+\end{minipage}
+\begin{minipage}[c]{0.49\columnwidth}
+\begin{itemize}
     \item DC-Verbinder und Kabel
     \item Montagesystem
     \item Verschattung
@@ -62,6 +68,189 @@
         \item Defekte $\rightarrow$ Monitoring
     \end{itemize}
   \end{itemize}
+\end{minipage}
+\subsection{Verlustfaktoren Modul}
+\begin{itemize}
+  \item Abschattung: schmale Finger, viele Busbars, Rückseitenkontakt (IBC)
+  \item Reflexion: Antireflexschicht, Oberflächentextur (Pyramiden)
+  \item Störstellenrekombination: reines Si, n-Typ-Zellen
+  \item Oberflächenrekombination: Passivierung, punktuelle Kontakte, BSF
+  \item Transmission: Rückseiten-Oxidschicht (Photonenrückführung)
+  \item Metall-Halbleiter-Übergang: lokale n$^+$/p$^+$-Schicht
+\end{itemize}
+
+Abstand Verschattung Flachdach: $\boxed{d\approx 107 \cdot \text{breite}}$\\
+
+\section{PV-Anhänger}
+\subsection{Funktionsprinzip}
+Bei der Elektrolumineszenz kehrt sich der photoelektrische Effekt um: Das PV-Modul wird mit Gleichstrom durch eine externe Stromquelle gespeist. Dabei rekombinieren Elektronen, indem sie vom Leitungsband ins Valenzband zurückfallen, und emittieren Photonen mit einer Wellenlänge entsprechend der Bandlücke (ca. 1150~nm). Diese Strahlung wird mit einer geeigneten Infrarotkamera detektiert.
+\subsection{Kriterien Sonnensimulation (Flasher)}
+\begin{itemize}
+    \item Spektrale Anpassungen: Wie nah kommt der Flasher an die 1.5 AM der Sonne
+    \item Homogenität der Bestrahlung
+    \item Zeitliche Instabilität: Zeitliche Änderungen während der Messung
+\end{itemize}
+
+\subsection{Emissionsgrad}
+$\boxed{P = \sigma \cdot \varepsilon \cdot T^4}$
+
+\vspace{0.15cm}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l p{7cm} l @{}}
+    $[T]$              & Temperatur \dotfill                                          & $\mathrm{K}$ \\
+    $[\varepsilon]$    & Emissionsgrad \dotfill                                       & $-$ \\
+    $[\sigma]$         & Stefan\textendash Boltzmann-Konstante, $1{,}38 \cdot 10^{-23}$ \dotfill & $\frac{\mathrm{J}}{\mathrm{K}}$ \\
+    $[P]$              & Abgestrahlte Leistung \dotfill                               & $\frac{\mathrm{W}}{\mathrm{m^2}}$ \\
+\end{tabular}
+
+
+
+
+
+\section{Sonstiges}
+
+\subsection{Klassifikation von Flashern (Sonnensimulatioren)}
+
+\uline{Spektrale Anpassung}: Kriterium, wie nah das Spektrum des Flashers an das Solarspektrum bei AM 1.5 herankommt
+
+\vspace{0.1cm}
+
+\uline{Räumliche Ungleichmässigkeit der Bestrahlungsstärke}: Mass für die räumliche Homogenität der Einstrahlung, mit der das PV-Modul beleuchtet wird
+
+\vspace{0.1cm}
+
+\uline{Zeitliche Instabilität}: Mass für die zeitliche Gleichmässigkeit der Einstrahlung während des Messvorgangs
+
+
+
+\subsection{Erklärung Prinzip der Elektrolumineszenz}
+
+Bei der Elektrolumineszenz wird der photoelektrische Effekt umgekehrt: Das PV-Modul wird über eine externe DC-Stromquelle bestromt, Elektronen rekombinieren, wechseln vom Leitungs- ins Valenzband und geben dabei Licht (Photonen) bei einer Wellenlänge entsprechend der Bandlücke ab (ca. 1'150 nm). Dieses Licht wird mit einer passenden Kamera aufgenommen.
+
+
+
+\subsection{Bsp. Elektrolumineszenz}
+
+
+\begin{minipage}[c]{0.28\columnwidth}
+    \includegraphics[width=0.98\columnwidth]{images/Bsp_Elektrolumineszenz.png}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.68\columnwidth}
+    Die Mikrorisse sind als sehr kritisch einzustufen, ein erheblicher Teil der aktiven Fläche der Solarzelle kann potenziell abgetrennt werden. 
+\end{minipage}
+
+\section{Verschattung}
+\subsection{Bestimmung des Höhenwinkels $\gamma_V$}
+
+\includegraphics[width=0.98\columnwidth]{images/Verschattung_1.jpg}
+
+\vspace{0.1cm}
+
+$\boxed{
+\gamma_V = \arctan\left( \frac{h_2 - h_1}{d} \right)
+}$
+$\boxed{
+\gamma_V = \arctan\left( \frac{\Delta h}{d} \right)
+}$
+
+\vspace{0.1cm}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l p{8cm} l @{}}
+    $[h_1]$        & Höhe des betrachteten Punktes (z.B. Dachkante) \dotfill & $\mathrm{m}$ \\
+    $[h_2]$        & Höhe des verschattenden Objekts \dotfill & $\mathrm{m}$ \\
+    $[\Delta h]$   & Höhendifferenz $h_2 - h_1$ \dotfill & $\mathrm{m}$ \\
+    $[d]$          & Horizontale Entfernung zwischen Objekt und Betrachtungspunkt \dotfill & $\mathrm{m}$ \\
+    $[\gamma_V]$   & Höhenwinkel (Verschattungswinkel) \dotfill & $\mathrm{^\circ}$ \\
+\end{tabular}
+
+
+
+
+\subsection{Nahverschattung und Kernverschattung}
+
+\includegraphics[width=0.98\columnwidth]{images/Verschattung_2.jpg}
+
+$
+\boxed{
+\frac{r_{\mathrm{V\_Min}}}{d_{\mathrm{V}}}
+= \frac{r_{\mathrm{SE}} + r_{\mathrm{V\_Min}}}{d_{\mathrm{S}}}
+\approx \frac{r_{\mathrm{SE}}}{d_{\mathrm{S}}}
+}
+$
+
+\vspace{0.1cm}
+
+$
+\boxed{
+r_{\mathrm{V\_Min}} = \frac{r_{\mathrm{SE}}}{d_{\mathrm{S}}} \cdot d_{\mathrm{V}}
+= \frac{149{,}6\,\mathrm{Mio\,km}}{1{,}393\,\mathrm{Mio\,km}} \cdot d_{\mathrm{V}}
+\approx 107 \cdot d_{\mathrm{V}}
+}
+$
+
+\vspace{0.1cm}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l p{6.5cm} l @{}}
+    $[r_{\mathrm{V\_Min}}]$ & Minimaler Radius der Verschattungsprojektion \dotfill & $\mathrm{m}$ \\
+    $[d_{\mathrm{V}}]$      & Abstand zwischen Hindernis und betrachteter Fläche \dotfill & $\mathrm{m}$ \\
+    $[r_{\mathrm{SE}}]$     & Radius Erde–Sonne \dotfill & $\mathrm{km}$ \\
+    $[d_{\mathrm{S}}]$      & Sonnendurchmesser \dotfill & $\mathrm{km}$ \\
+\end{tabular}
+
+
+
+
+
+
+
+\section{Reihenverschattung (Eigenverschattung)}
+
+\includegraphics[width=0.98\columnwidth]{images/Verschattung_3.jpg}
+
+\vspace{0.1cm}
+
+$
+\boxed{
+d_{\mathrm{Min}} = b \cdot \frac{\sin(\gamma_S + \beta)}{\sin \gamma_S}
+}
+$
+$
+\boxed{
+f_{\mathrm{Nutz}} = \frac{b}{d}
+}
+$
+
+\vspace{0.1cm}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l p{7.5cm} l @{}}
+    $[d_{\mathrm{Min}}]$     & minimaler Modulabstand zur Vermeidung von Verschattung \dotfill & $\mathrm{m}$ \\
+    $[b]$                    & Modulbreite \dotfill & $\mathrm{m}$ \\
+    $[\gamma_S]$             & Sonnenhöhenwinkel \dotfill & $\mathrm{^\circ}$ \\
+    $[\beta]$                & Neigungswinkel des Moduls \dotfill & $\mathrm{^\circ}$ \\
+    $[f_{\mathrm{Nutz}}]$    & Flächennutzungsgrad \dotfill & $-$ \\
+    $[d]$                    & tatsächlicher Modulabstand \dotfill & $\mathrm{m}$ \\
+\end{tabular}
+
+
+
+
+\subsection{Sonstige Verschattung}
+
+\includegraphics[width=0.98\columnwidth]{images/Verschattung_4.jpg}
+
+\vspace{0.1cm}
+
+\begin{itemize}
+    \item Stringverschaltung an Verschattung anpassen
+    \begin{itemize}
+        \item \dots und allenfalls Optimierer einsetzen
+    \end{itemize}
+\end{itemize}
 
 
 
@@ -70,7 +259,168 @@
 
 
 
+\section{Energieertrag}
+
+\subsection{Spezischische Erträge}
+
+\includegraphics[width=0.98\columnwidth]{images/Energieertrag_1.jpg}
+
+\vspace{0.1cm}
+
+$
+\boxed{
+Y_\mathrm{R} = \frac{H_\mathrm{G}}{E_\mathrm{STC}}
+}
+$
+$
+\boxed{
+Y_\mathrm{A} = \frac{W_\mathrm{DC}}{P_\mathrm{STC}}
+}
+$
+$
+\boxed{
+Y_\mathrm{F} = \frac{W_\mathrm{AC}}{P_\mathrm{STC}}
+}
+$
+$
+\boxed{
+PR = \frac{Y_{\mathrm{F}}}{Y_{\mathrm{R}}}
+}$
+
+\vspace{0.1cm}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l p{6.5cm} l @{}}
+    $[Y_\mathrm{R}]$     & Referenzertrag \dotfill & $\frac{\mathrm{kWh}}{\mathrm{kWp}}$ \\
+    $[Y_\mathrm{A}]$     & Generatorertrag (DC) \dotfill & $\frac{\mathrm{kWh}}{\mathrm{kWp}}$ \\
+    $[Y_\mathrm{F}]$     & Endertrag (AC) \dotfill & $\frac{\mathrm{kWh}}{\mathrm{kWp}}$ \\
+    $[H_\mathrm{G}]$     & Globale Einstrahlung aufs Modul \dotfill & $\frac{\mathrm{kWh}}{\mathrm{m^2}}$ \\
+    $[E_\mathrm{STC}]$   & Einstrahlung bei STC \dotfill & $\frac{\mathrm{W}}{\mathrm{m^2}}$ \\
+    $[W_\mathrm{DC}]$    & vom PV-Generator bereitgestellte Energie (DC) \dotfill & $\mathrm{kWh}$ \\
+    $[W_\mathrm{AC}]$    & ins Netz eingespeiste Energie (AC) \dotfill & $\mathrm{kWh}$ \\
+    $[P_\mathrm{STC}]$   & PV-Nennleistung unter STC \dotfill & $\mathrm{kWp}$ \\
+    $[PR]$   & Performance Ratio \dotfill & $\%$ \\
+\end{tabular}
+
+$PR$ ist eine Vergleichszahl für PV-Anlagen und sollte > 80\% sein.
+
+\vspace{0.1cm}
+
+\textbf{Ursachen für Generatorverluste \( L_C \)}
+\begin{itemize}
+    \item Die Module haben weniger Leistung als im Datenblatt angegeben
+    \item Die Modultemperatur ist höher als 25\,°C
+    \item Die Module sind verschmutzt oder teilverschattet
+    \item Es tritt Mismatching zwischen Modulen eines Strings auf
+    \item Die Module werden nicht im MPP betrieben
+    \item Es entstehen ohmsche Verluste in den DC-Leitungen
+\end{itemize}
+
+\vspace{1em}
+
+\textbf{Ursachen für Systemverluste \( L_S \)}
+\begin{itemize}
+    \item Der Wirkungsgrad des Wechselrichters ist kleiner als 100\,\%
+    \item Der Wechselrichter ist unterdimensioniert und regelt bei hohen Eingangsleistungen ab
+    \item Es entstehen ohmsche Verluste in den AC-Leitungen
+\end{itemize}
 
 
 
 
+
+
+
+
+\columnbreak
+\subsection{Spezifischer Jahresenergieertrag $Y_\mathrm{F}$}
+$\boxed{Y_\mathrm{F} = \frac{H_\mathrm{G}}{E_\mathrm{STC}} \cdot PR}$
+$\boxed{Y_\mathrm{F} = Y_\mathrm{R} \cdot PR}$
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l p{6.5cm} l @{}}
+    $[Y_\mathrm{F}]$      & Spezifischer Jahresenergieertrag \dotfill & $\frac{\mathrm{kWh}}{\mathrm{kWp}}$ \\
+    $[H_\mathrm{G}]$      & Einstrahlung auf geneigter Fläche \dotfill & $\frac{\mathrm{kWh}}{\mathrm{m^2}}$ \\
+    $[E_\mathrm{STC}]$    & Einstrahlung bei STC              \dotfill & $\frac{\mathrm{W}}{\mathrm{m^2}}$ \\
+    $[PR]$                & Performance Ratio                 \dotfill & $-$ \\
+\end{tabular}
+
+\subsubsection{Einstrahlung auf geneigte Fläche $H_\mathrm{G}$}
+$\boxed{H_\mathrm{G} = H_0 \cdot f}$
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l p{6.5cm} l @{}}
+    $[H_\mathrm{G}]$  & Einstrahlung auf geneigter Fläche     \dotfill & $\frac{\mathrm{kWh}}{\mathrm{m^2}}$ \\
+    $[H_0]$           & Horizontale Einstrahlung              \dotfill & $\frac{\mathrm{kWh}}{\mathrm{m^2}}$ \\
+    $[f]$             & Umrechnungsfaktor für Neigung/Ausrichtung \dotfill & $-$ \\
+\end{tabular}
+
+
+\vspace{0.4cm}
+
+\subsection{Gesamter Jahresenergieertrag $Y_\mathrm{ges}$}
+
+$\boxed{P_\mathrm{STC} = A_\mathrm{Modul} \cdot \eta_\mathrm{Modul} \cdot E_\mathrm{STC}}$
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l p{6.5cm} l @{}}
+    $[P_\mathrm{STC}]$       & Nennleistung des PV-Moduls bei STC         \dotfill & $\mathrm{W}$ \\
+    $[A_\mathrm{Modul}]$     & Modulfläche                                \dotfill & $\mathrm{m^2}$ \\
+    $[\eta_\mathrm{Modul}]$  & Modulwirkungsgrad                           \dotfill & $-$ \\
+    $[E_\mathrm{STC}]$       & Einstrahlung bei STC                        \dotfill & $\frac{\mathrm{W}}{\mathrm{m^2}}$ \\
+\end{tabular}
+
+
+$\boxed{Y_\mathrm{ges} = P_\mathrm{STC} \cdot Y_\mathrm{F}}$
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{} l p{6.5cm} l @{}}
+    $[Y_\mathrm{ges}]$    & Gesamter Jahresenergieertrag      \dotfill & $\mathrm{kWh}$ \\
+    $[P_\mathrm{STC}]$    & Nennleistung des Generators bei STC \dotfill & $\mathrm{kWp}$ \\
+    $[Y_\mathrm{F}]$      & Spezifischer Jahresenergieertrag \dotfill & $\frac{\mathrm{kWh}}{\mathrm{kWp}}$ \\
+\end{tabular}
+
+
+
+
+\section{Fehlerkategorien}
+
+\includegraphics[width=0.8\columnwidth]{images/Fehler_1.png}
+
+\subsubsection{Verfärbungen, Delemination}
+\includegraphics[width=0.8\columnwidth]{images/Fehler_1.pdf}
+
+\subsubsection{Rückseitenfolie}
+\includegraphics[width=0.8\columnwidth]{images/Fehler_2.pdf}
+
+\columnbreak
+\subsubsection{Brandflecken}
+\includegraphics[width=0.8\columnwidth]{images/Fehler_3.pdf}
+
+\subsubsection{Glasbruch}
+\includegraphics[width=0.8\columnwidth]{images/Fehler_4.pdf}
+
+\subsubsection{Anschlussdose}
+\includegraphics[width=0.8\columnwidth]{images/Fehler_5.pdf}
+
+\subsubsection{Verschmutzung}
+\includegraphics[width=0.8\columnwidth]{images/Fehler_6.jpg}
+
+\subsubsection{DC-Verbinder und Kabel}
+\includegraphics[width=0.8\columnwidth]{images/Fehler_7.pdf}
+
+\subsubsection{Montagesystem}
+\includegraphics[width=0.8\columnwidth]{images/Fehler_8.jpg}
+
+\subsubsection{Verschattung}
+\includegraphics[width=0.8\columnwidth]{images/Fehler_9.jpg}
+
+\subsubsection{Wechselrichter}
+\includegraphics[width=0.8\columnwidth]{images/Fehler_10.jpg}
+
+
+\section{Modulbewertung}
+
+\includegraphics[width=0.8\columnwidth]{images/Modulbewertung_1.jpg}
+
+\includegraphics[width=0.8\columnwidth]{images/Modulbewertung_2.jpg}
